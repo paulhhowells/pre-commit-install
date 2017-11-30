@@ -13,6 +13,10 @@ const hooks = path.resolve(git, 'hooks');
 const precommitPath = path.resolve(hooks, 'pre-commit');
 const newPrecommitHook = path.resolve(cwd, 'pre-commit.sh');
 
+console.log('cwd', cwd);
+console.log('precommitPath', precommitPath);
+console.log('__dirname', __dirname);
+
 // Stop the install if a `.git` directory does not exist (as hooks would not be run).
 if (!exists(git) || !fs.lstatSync(git).isDirectory()) {
 	return;
