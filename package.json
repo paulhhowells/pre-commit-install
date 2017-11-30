@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Installs a pre-commit hook that lints only staged changes.",
 	"scripts": {
-		"install": "install.js",
+		"install": "node install.js",
 		"uninstall": "node uninstall.js"
 	},
 	"repository": {
