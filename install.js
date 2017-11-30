@@ -6,16 +6,13 @@ const path = require('path');
 const exists = fs.existsSync || path.existsSync;
 
 // Find the absolute location of the `pre-commit` file.
-// The path needs to be absolute in order for the symlinking to work correctly.
+// The path needs to be absolute in order for any symlinking to work.
 const projectPath = path.resolve(__dirname, '..', '..');
 const git = path.resolve(projectPath, '.git');
 const hooks = path.resolve(git, 'hooks');
 const precommitPath = path.resolve(hooks, 'pre-commit');
+const backupPath = precommitPath + '.bak';
 const newPrecommitHook = path.resolve(__dirname, 'pre-commit.sh');
-
-console.log('precommitPath', precommitPath);
-console.log('newPrecommitHook', newPrecommitHook);
-console.log('__dirname', __dirname);
 
 // Stop the install if a `.git` directory does not exist (as hooks would not be run).
 if (!exists(git) || !fs.lstatSync(git).isDirectory()) {
@@ -34,7 +31,7 @@ if (exists(precommitPath) && !fs.lstatSync(precommitPath).isSymbolicLink()) {
 	console.log('pre-commit: Detected an existing git pre-commit hook');
 
 	fs.writeFileSync(
-		precommitPath + '.bak',
+		backupPath,
 		fs.readFileSync(precommitPath)
 	);
 
