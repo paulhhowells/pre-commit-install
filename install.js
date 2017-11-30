@@ -51,7 +51,7 @@ try {
 
 // Try to make the new pre-commit file executable, and fail gracefully if it doesn’t work.
 try {
-	fs.chmodSync(precommitPath, '+x');
+	fs.chmodSync(precommitPath, '755');
 } catch (error) {
 	console.error('pre-commit: chmod 0777 the pre-commit file in your .git/hooks folder because:');
 	console.error('pre-commit: ' + error.message);
