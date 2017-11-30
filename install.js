@@ -43,8 +43,7 @@ try {
 		precommitPath,
 		fs.readFileSync(newPrecommitHook)
 	);
-}
-catch (error) {
+} catch (error) {
 	console.error('pre-commit: Failed to create the pre-commit hook file in .git/hooks/  because:');
 	console.error('pre-commit: ' + error.message);
 }
@@ -52,8 +51,7 @@ catch (error) {
 // Try to make the new pre-commit file executable, and fail gracefully if it doesn’t work.
 try {
 	fs.chmodSync(precommitPath, '+x');
-}
-catch (error) {
+} catch (error) {
 	console.error('pre-commit: chmod 0777 the pre-commit file in your .git/hooks folder because:');
 	console.error('pre-commit: ' + error.message);
 }
