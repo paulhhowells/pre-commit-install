@@ -1,0 +1,27 @@
+{
+	"name": "pre-commit-install",
+	"version": "1.0.0",
+	"description": "Installs a pre-commit hook that lints only staged changes.",
+	"scripts": {
+		"install": "install.js",
+		"uninstall": "node uninstall.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/paulhhowells/pre-commit-install.git"
+	},
+	"keywords": [
+		"git",
+		"hook",
+		"eslint"
+	],
+	"author": "paulhhowells",
+	"bugs": {
+		"url": "https://github.com/paulhhowells/pre-commit-install/issues"
+	},
+	"homepage": "https://github.com/paulhhowells/pre-commit-install#readme",
+	"devDependencies": {
+		"eslint": "^4.12.0",
+		"eslint-plugin-json": "^1.2.0"
+	}
+}
