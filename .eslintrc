@@ -1,0 +1,39 @@
+{
+	"extends": ["eslint:recommended"],
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"rules": {
+		"vars-on-top": 2,
+		"camelcase": 2,
+		"semi": 2,
+		"curly": 2,
+		"new-cap": 2,
+		"no-multiple-empty-lines": 2,
+		"no-trailing-spaces": 2,
+		"newline-before-return": 2,
+		"no-mixed-spaces-and-tabs": 2,
+		"brace-style": [1, "1tbs"],
+		"quotes": [2, "single"],
+		"no-eval": 2,
+		"space-before-blocks": [2, "always"],
+		"linebreak-style": [2, "unix"],
+		"keyword-spacing": 2,
+		"no-unused-vars": 1,
+		"guard-for-in": 1,
+		"indent": [1, "tab"],
+		"spaced-comment": [1, "always"],
+		"lines-around-comment": [
+			1,
+			{
+				"beforeBlockComment": true,
+				"beforeLineComment": true,
+				"allowBlockStart": true,
+				"allowBlockEnd": true,
+				"allowArrayStart": true
+			}
+		],
+		"no-console": 0
+	}
+}
