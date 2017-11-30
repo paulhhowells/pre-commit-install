@@ -1,2 +1,4 @@
 # pre-commit-install
-Install git pre-commit hook
+
+Install a pre-commit hook that lints only staged changes.
+
