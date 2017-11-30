@@ -7,14 +7,14 @@ const exists = fs.existsSync || path.existsSync;
 
 // Find the absolute location of the `pre-commit` file.
 // The path needs to be absolute in order for the symlinking to work correctly.
-const cwd = path.resolve();
-const git = path.resolve(cwd, '.git');
+const projectPath = path.resolve(__dirname, '..', '..');
+const git = path.resolve(projectPath, '.git');
 const hooks = path.resolve(git, 'hooks');
 const precommitPath = path.resolve(hooks, 'pre-commit');
-const newPrecommitHook = path.resolve(cwd, 'pre-commit.sh');
+const newPrecommitHook = path.resolve(__dirname, 'pre-commit.sh');
 
-console.log('cwd', cwd);
 console.log('precommitPath', precommitPath);
+console.log('newPrecommitHook', newPrecommitHook);
 console.log('__dirname', __dirname);
 
 // Stop the install if a `.git` directory does not exist (as hooks would not be run).
